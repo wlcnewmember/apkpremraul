@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>⭐ PREMIUM APK STORE | Jual Aplikasi Premium</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    
+    .header {
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ffaa44;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #ffaa44, #ffdd88);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .header p { font-size: 0.8rem; color: #aaa; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    
+    .section-title {
+      font-size: 1.5rem;
+      margin: 30px 0 20px;
+      color: #ffaa44;
+      border-left: 4px solid #ffaa44;
+      padding-left: 15px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .product-card {
+      background: rgba(20,20,40,0.9);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: #ffaa44;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .product-icon { font-size: 3rem; text-align: center; margin-bottom: 15px; }
+    .product-title { font-size: 1.2rem; font-weight: bold; text-align: center; margin-bottom: 10px; }
+    .product-price { font-size: 1.5rem; color: #ffaa44; text-align: center; margin: 10px 0; }
+    .product-desc { font-size: 0.8rem; color: #aaa; text-align: center; margin-bottom: 15px; }
+    .btn-buy {
+      background: #ffaa44;
+      color: #1a1a1a;
+      border: none;
+      width: 100%;
+      padding: 10px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-buy:hover { background: #ffcc66; transform: scale(1.02); }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .modal-content {
+      background: #1a1a2a;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 450px;
+      width: 90%;
+      border: 1px solid #ffaa44;
+    }
+    .modal-content h3 { color: #ffaa44; margin-bottom: 10px; }
+    .modal-content p { margin-bottom: 10px; }
+    .close-modal {
+      float: right;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #aaa;
+    }
+    .close-modal:hover { color: white; }
+    
+    .payment-methods {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .payment-btn {
+      background: #1a1a2a;
+      border: 2px solid #333;
+      border-radius: 60px;
+      padding: 12px 25px;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.2s;
+      flex: 1;
+      min-width: 100px;
+    }
+    .payment-btn:hover {
+      border-color: #ffaa44;
+      transform: translateY(-2px);
+    }
+    .payment-btn i { font-size: 1.5rem; display: block; margin-bottom: 8px; }
+    .payment-btn .payment-name { font-size: 0.8rem; font-weight: bold; }
+    
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-size: 0.8rem; color: #aaa; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      background: #0a0a0a;
+      color: white;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid #333;
+      font-size: 0.7rem;
+      color: #666;
+    }
+    
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ffaa44;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 600px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .payment-methods { flex-direction: column; }
+      .payment-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1><i class="fas fa-crown"></i> PREMIUM APK STORE <i class="fas fa-crown"></i></h1>
+  <p>Aplikasi Premium Harga Terjangkau | 100% Work</p>
+</div>
+
+<div class="container">
+  <div class="section-title">
+    <i class="fas fa-fire"></i> 🔥 PRODUK TERLARIS
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+  
+  <div class="section-title">
+    <i class="fas fa-box"></i> 📦 SEMUA PRODUK
+  </div>
+  <div class="product-grid" id="allProductsGrid"></div>
+</div>
+
+<!-- MODAL PEMBAYARAN -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <h3 id="modalProductName">-</h3>
+    <p>Harga: <strong id="modalProductPrice">Rp 0</strong></p>
+    <hr style="margin: 15px 0; border-color: #333;">
+    
+    <p><strong>📋 Isi Data Diri:</strong></p>
+    <div class="form-group">
+      <label>Nama Lengkap</label>
+      <input type="text" id="buyerName" placeholder="Contoh: Ahmad Rizki">
+    </div>
+    <div class="form-group">
+      <label>Nomor WhatsApp (aktif)</label>
+      <input type="text" id="buyerPhone" placeholder="081234567890">
+    </div>
+    
+    <p><strong>💳 Pilih Metode Pembayaran:</strong></p>
+    <div class="payment-methods">
+      <div class="payment-btn" onclick="pilihPembayaran('QRIS')">
+        <i class="fas fa-qrcode"></i>
+        <span class="payment-name">QRIS</span>
+      </div>
+      <div class="payment-btn" onclick="pilihPembayaran('DANA')">
+        <i class="fas fa-wallet"></i>
+        <span class="payment-name">DANA</span>
+      </div>
+      <div class="payment-btn" onclick="pilihPembayaran('GOPAY')">
+        <i class="fas fa-mobile-alt"></i>
+        <span class="payment-name">GOPAY</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <i class="fas fa-copyright"></i> 2025 Premium APK Store | By Rashad
+</footer>
+
+<script>
+  // ========== KONFIGURASI TELEGRAM ==========
+  // 🔴 USERNAME TELEGRAM ADMIN (GANTI PUNYA KAMU) 🔴
+  const ADMIN_USERNAME = "hadxzjasconfess";
+  
+  // ========== DATA PRODUK ==========
+  const products = [
+    { id: 1, name: "CapCut Pro Mod", icon: "🎬", price: 25000, desc: "CapCut Pro full fitur, tanpa watermark", bestseller: true },
+    { id: 2, name: "Lightroom Premium", icon: "📸", price: 20000, desc: "Lightroom Mod, semua preset unlocked", bestseller: true },
+    { id: 3, name: "Snaptube Pro", icon: "📹", price: 15000, desc: "Download video semua platform", bestseller: true },
+    { id: 4, name: "Spotify Premium", icon: "🎵", price: 35000, desc: "Spotify Mod, offline download", bestseller: false },
+    { id: 5, name: "Alight Motion Pro", icon: "🎨", price: 30000, desc: "AM Mod, all effects unlocked", bestseller: false },
+    { id: 6, name: "VSCO Premium", icon: "📷", price: 20000, desc: "VSCO X unlocked", bestseller: false },
+    { id: 7, name: "PicsArt Gold", icon: "🖼️", price: 25000, desc: "PicsArt Gold semua fitur", bestseller: false },
+    { id: 8, name: "Xrecorder Pro", icon: "📱", price: 15000, desc: "Screen recorder tanpa watermark", bestseller: false },
+    { id: 9, name: "KineMaster Diamond", icon: "🎥", price: 40000, desc: "KineMaster tanpa watermark", bestseller: false }
+  ];
+  
+  let selectedProduct = null;
+  
+  // ========== RENDER PRODUK ==========
+  function renderProducts() {
+    const bestsellerGrid = document.getElementById('productGrid');
+    const allGrid = document.getElementById('allProductsGrid');
+    
+    const bestseller = products.filter(p => p.bestseller);
+    const all = products;
+    
+    bestsellerGrid.innerHTML = bestseller.map(p => `
+      <div class="product-card">
+        <div class="product-icon">${p.icon}</div>
+        <div class="product-title">${p.name}</div>
+        <div class="product-price">Rp ${p.price.toLocaleString()}</div>
+        <div class="product-desc">${p.desc}</div>
+        <button class="btn-buy" onclick="openPaymentModal(${p.id})"><i class="fas fa-shopping-cart"></i> Beli</button>
+      </div>
+    `).join('');
+    
+    allGrid.innerHTML = all.map(p => `
+      <div class="product-card">
+        <div class="product-icon">${p.icon}</div>
+        <div class="product-title">${p.name}</div>
+        <div class="product-price">Rp ${p.price.toLocaleString()}</div>
+        <div class="product-desc">${p.desc}</div>
+        <button class="btn-buy" onclick="openPaymentModal(${p.id})"><i class="fas fa-shopping-cart"></i> Beli</button>
+      </div>
+    `).join('');
+  }
+  
+  // ========== BUKA MODAL PEMBAYARAN ==========
+  function openPaymentModal(productId) {
+    selectedProduct = products.find(p => p.id === productId);
+    document.getElementById('modalProductName').innerHTML = `<i class="fas fa-mobile-alt"></i> ${selectedProduct.name}`;
+    document.getElementById('modalProductPrice').innerHTML = `Rp ${selectedProduct.price.toLocaleString()}`;
+    document.getElementById('paymentModal').style.display = 'flex';
+  }
+  
+  function closeModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+    selectedProduct = null;
+  }
+  
+  // ========== PILIH PEMBAYARAN ==========
+  function pilihPembayaran(metode) {
+    const nama = document.getElementById('buyerName').value.trim();
+    const phone = document.getElementById('buyerPhone').value.trim();
+    
+    if (!nama) {
+      alert("⚠️ Masukkan nama lengkap!");
+      return;
+    }
+    if (!phone) {
+      alert("⚠️ Masukkan nomor WhatsApp!");
+      return;
+    }
+    
+    if (!phone.match(/^[0-9]{10,13}$/)) {
+      alert("⚠️ Nomor WhatsApp tidak valid! Masukkan 10-13 digit angka.");
+      return;
+    }
+    
+    // Format pesan untuk Telegram
+    const pesan = `🛍️ **PESANAN BARU** 🛍️\n\n👤 Nama: ${nama}\n📱 WhatsApp: ${phone}\n📦 Produk: ${selectedProduct.name}\n💰 Harga: Rp ${selectedProduct.price.toLocaleString()}\n💳 Metode: ${metode}\n\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}\n\n_*Silakan konfirmasi pembayaran dan kirimkan APK setelah pembayaran diverifikasi._`;
+    
+    // Buat link Telegram untuk chat pribadi
+    const encodedMessage = encodeURIComponent(pesan);
+    const telegramLink = `https://t.me/${ADMIN_USERNAME}?text=${encodedMessage}`;
+    
+    // Buka chat Telegram
+    window.open(telegramLink, '_blank');
+    
+    // Tutup modal
+    closeModal();
+    
+    // Reset form
+    document.getElementById('buyerName').value = '';
+    document.getElementById('buyerPhone').value = '';
+  }
+  
+  // Render produk saat halaman dimuat
+  renderProducts();
+</script>
+</body>
+  </html>
